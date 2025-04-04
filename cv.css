@@ -1,0 +1,89 @@
+body {
+    font-family: "Roboto", serif;
+  }
+  
+  *,
+  ::before,
+  ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+  }
+
+  .MonCV
+
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 50px 0;
+    
+  }
+
+  .imgCV
+  {
+    width: 50vw;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ff00ff,  0 0 20px #ff00ff,
+    0 0 30px #9400d3,  0 0 40px #4b0082, 0 0 50px #00008b,
+    inset 0 0 10px #ff00ff; 
+
+  }
+
+  .header-container
+  {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 50px;
+
+   
+  }
+
+  .header-container p
+  {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    animation: animp 6s steps(30) forwards;
+    /* L'animation utilise steps(30) pour définir combien de "passages" l'animation doit faire,
+    ce qui contrôle la fluidité du texte apparaissant. */
+    /* L'élément reste dans son état final après l'animation.
+     Dans ton cas, la largeur reste à 100%, ce qui donne l'impression que le texte s'affiche progressivement et reste visible. */
+  }
+
+  footer
+  {
+    color: white;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 50px;
+  }
+  footer p
+  {
+    font-size: 1.1rem;
+    font-style: italic;
+  }
+
+  @keyframes animp
+  {
+    0%{
+        width: 0;
+    }
+    100%
+    {
+        width: 100%;
+    }
+  }
