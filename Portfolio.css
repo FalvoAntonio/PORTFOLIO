@@ -376,7 +376,7 @@ h2:not(.card h2) {
 .imgHTML {
   position: relative;
   /* il bougera pas, il se passera rien */
-  background: url(/Images/HTML.png) no-repeat;
+  background: url(./Images/HTML.png) no-repeat;
   background-color: #fff;
   background-size: cover;
   
@@ -401,7 +401,7 @@ h2:not(.card h2) {
 
 .imgCSS {
   position: relative;
-  background: url(/Images/CSS.png) no-repeat;
+  background: url(./Images/CSS.png) no-repeat;
   background-color: white;
   
   width: 15%;
@@ -426,7 +426,7 @@ h2:not(.card h2) {
 
 .imgJAVASCRIPT {
   position: relative;
-  background: url(/Images/JavaScript.png) no-repeat;
+  background: url(./Images/JavaScript.png) no-repeat;
   background-size: cover;
   background-position: center;
   /* background-size:cover; */
@@ -452,7 +452,7 @@ h2:not(.card h2) {
 
 .imgCAPCUT {
   position: relative;
-  background: url(/Images/CAPCUT.webp) no-repeat;
+  background: url(./Images/CAPCUT.webp) no-repeat;
   background-size: cover;
   background-position: center;
   /* background-size:cover; */
@@ -486,7 +486,7 @@ h2:not(.card h2) {
 
 .imgFIGMA {
   position: relative;
-  background: url(/Images/icons8-figma.svg) no-repeat;
+  background: url(./Images/icons8-figma.svg) no-repeat;
   background-size: cover;
   background-position: center;
   /* background-size:cover; */
