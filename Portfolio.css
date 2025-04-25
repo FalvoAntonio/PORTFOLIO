@@ -555,7 +555,7 @@ footer {
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid #9b4dff;
   border-radius: 20px;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0 0 20px rgba(155, 77, 255, 0.5);
 }
 
@@ -602,18 +602,18 @@ footer {
 }
 .Section5 {
   text-align: center;
-  padding: 20px 15px;
+  padding: 10px 15px;
 }
 
-/* .Section5 h2 {
-  background: linear-gradient(to right, #378bdf, #9b4dff, #ff007f);
+.Section5#Contact h2 {
+  /* background: linear-gradient(to right, #378bdf, #9b4dff, #ff007f);
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
+  color: transparent; */
   font-size: 36px;
   margin-bottom: 20px;
-} */
- /* ! PORTFOLIO TROUVER LE LINK, Pour Section5 h2 ne change rien, apprendre le TypeScript avec un exercice */
+}
+ /* ! P, Pour Section5 h2 ne change rien, apprendre le TypeScript avec un exercice */
 
 .Section5 p:hover {
   animation: animetextp 1s ease-in-out infinite;
