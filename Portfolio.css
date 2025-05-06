@@ -39,98 +39,127 @@ body {
   animation-fill-mode: forwards;
   /* C'est pour gérer la vitesse et le ralentissement de l'animation
     à des moments précis */
-  animation-timing-function: ease-in-out;
- 
+  animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1); /* Accélération et décélération */
+  filter: drop-shadow(0 0 8px rgba(241, 1, 133, 0.7));
+
 }
 header {
   position: fixed;
   width: 100%;
-  background: black;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85));
   /* Le z index élevé va me permettre de faire une superposition et plus il est
     élevé plus il sera devant mon autre élément */
   z-index: 999;
   /* ça me permet de faire un padding en haut et en bas de 10px */
-  padding-block: 10px;
-  box-shadow: 0 10px 1px 1px rgba(240, 29, 145, 0.7);
+  padding-block: 10px; 
+  box-shadow: 0 8px 15px rgba(240, 29, 145, 0.5);
+  backdrop-filter: blur(5px); /* Flou d'arrière-plan */
+  transition: all 0.3s ease; /* Transition pour l'effet de flou */
+}
+
+header:hover {
+  box-shadow: 0 10px 20px rgba(240, 29, 145, 0.7);
 }
 
 nav {
-  /* background-color: black; */
-  padding: 20px;
+  
+  padding: 15px 30px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   grid-template-rows: var(--logo-size);
   gap: 20px;
   font-family: "Winky Sans", sans-serif;
+  align-items: center;
+  
 
 }
 .logomenuburger {
   display: none;
 }
 header nav ul {
-  /* width: 100%; */
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  list-style-type: none;
+  height: 100%; /* Prend toute la hauteur disponible du parent (nav) */
+  display: flex; /* Utilise le modèle de disposition flexible */
+  flex-direction: row; /* Aligne les éléments horizontalement (gauche à droite) */
+  justify-content: center; /* Centre les éléments horizontalement dans l'espace disponible */
+  align-items: center;  /* Centre les éléments verticalement */
+  gap: 40px; /* Espace de 40px entre chaque élément de la liste */
+  list-style-type: none; /* Supprime les puces de liste par défaut */
   font-size: 20px;
-  
-  
-  
+  position: relative; /* Crée un contexte de positionnement pour les enfants absolus */
+  z-index: 10;    /* Place le menu au-dessus d'autres éléments (valeur plus élevée = plus en avant) */
   
 }
 ul a {
-  text-decoration: none;
+  text-decoration: none; /* Supprime le soulignement par défaut des liens */
   font-size: 16px;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px; /* Ajoute un espacement entre les lettres pour meilleure lisibilité */
   color: white;
-  border-bottom: 2px solid white;
+  position: relative; /* Nécessaire pour positionner l'effet de soulignement */
+  padding: 6px 12px; /* Espace interne autour du texte (haut/bas 6px, gauche/droite 12px) */
+  
 
 }
 
+ul a::after {
+  content: '';  /* Nécessaire pour créer l'effet de soulignement */
+  /* content: '';  c'est pour créer un élément pseudo qui va me permettre de faire un effet de soulignement */
+  position: absolute; /* Positionne l'élément par rapport à son parent (le lien) */
+  width: 0; /* Largeur initiale de l'effet de soulignement (0px) */
+  height: 2px; /* Hauteur de l'effet de soulignement (2px) */
+  bottom: 0; /* Positionne l'effet de soulignement en bas du lien */
+  left: 0; /* Positionne l'effet de soulignement à gauche du lien */
+  background: linear-gradient(to right, #378bdf, #9b4dff, #ff007f);
+  transition: width 0.4s ease-in-out;
+}
+
+
+/* Appliquer l'effet de soulignement uniquement aux 5 premiers éléments */
+li:not(:nth-child(6)) a:hover::after {
+  width: 100%; /* Étend l'effet de soulignement sur toute la largeur du lien au survol */
+  /* width: 100%; c'est pour faire un effet de soulignement au survol */
+
+}
+
+/* Style de base pour tous les liens dans les li */
 li a {
-  display: inline-block;
+  display: inline-block; /* Permet de transformer le lien en un élément de type bloc, ce qui permet d'appliquer des marges et des paddings */
   /* Faut que ça soit un block, parce que les inline ne peuvent 
     être transformer ici c'est le "a" (tout ce qui peut se mettre dans un texte*/
-  transition-property: background-color, transform;
-  transition-duration: 1s;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+    transition: transform 0.5s ease, color 0.3s ease; /* Transition pour l'effet de transformation et de couleur */
+    position: relative; /* Nécessaire pour positionner l'effet de soulignement */
+    overflow: hidden; /* Cache tout débordement de contenu */
 
 }
-
+/* Style au survol pour les 5 premiers éléments */
 li:not(:nth-child(6)) a:hover {
-  background-color: #9b4dff;
-  transform: scale(1.1, 1.1);
-  color: white;
+  transform: scale(1.1);  /* Agrandit légèrement le texte (110% de sa taille) */
+  color: #ffffff; /* Change la couleur du texte en violet */
   border-radius: 20px;
+  text-shadow: 0 0 5px rgba(155, 77, 255, 0.4); /* Effet de halo lumineux autour du texte */
+  
 }
-
+/* Style pour le conteneur du 6ème élément (Contact) */
 li:nth-child(6) {
-  padding: 3px;
+  padding: 3px; /* Ajoute un espacement autour du lien */
+  position: relative; /* Nécessaire pour positionner l'effet de soulignement */
  
   
 }
 
 li:nth-child(6) a {
   color: white;
-  display: inline-block;
-  transition-property: background-color, transform;
-  transition-duration: 1s;
+  display: inline-block; /* Permet de transformer le lien en un élément de type bloc, ce qui permet d'appliquer des marges et des paddings */
+  transition: transform 0.5s ease; /* Transition pour l'effet de transformation et de couleur */
   background: linear-gradient(45deg, #ff00ff, #4242db);
   border-radius: 20px;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-bottom: none;
+  padding: 6px 15px; /* Espace interne autour du texte (haut/bas 6px, gauche/droite 15px) */
+  border-bottom: none; /* Supprime la bordure inférieure */
+box-shadow: 0 0 10px rgba(155, 77, 255, 0.5); /* Effet d'ombre autour du lien */
 }
 li:nth-child(6) a:hover {
-  transform: scale(1.2, 1.2);
+  transform: scale(1.1); /* Agrandit légèrement le texte (110% de sa taille) */
+  
   
 }
 .Section1-container
@@ -252,16 +281,6 @@ h1 {
     (sans s'étendre jusqu'aux bords de la div).
     Cela permet de limiter le fond uniquement à la largeur de l'élément <h2> */
   margin-bottom: 50px;
-  /* background: linear-gradient(to right, #378bdf, #9b4dff, #ff007f); 
-    color: white;
-    text-shadow: 
-        -2px -2px 0 black,  
-         2px -2px 0 black,  
-        -2px  2px 0 black,  
-         2px  2px 0 black;
-          */
-  /* position: relative;
-     top: -45px; */
 }
 
 .Texte-APropos h2 {
@@ -663,6 +682,9 @@ border-radius: 50%;
 border: solid 3px black;
 position: relative;
 top: 30px;
+object-fit: cover;
+object-position: 0 -5px;
+/* object-position: top; */
 
 }
 
@@ -790,6 +812,18 @@ button:hover
 
 @media screen and (max-width: 1000px) 
  {
+  header nav ul{
+    flex-direction: column;
+    transform: scale(1,0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: top;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85));
+    /* background-color: rgba(0, 0, 0, 0.55); */
+    height: fit-content;
+  }
   .logo-container
   {
     grid-column: 1/3;
@@ -806,16 +840,7 @@ button:hover
   
   
 }
-.Menu ul{
-  grid-column: 2/3; 
-  grid-row: 1/2;
-  flex-direction: column;
-  background-color: black;
-  height: fit-content;
-  transform: scale(1,0);
-  transform-origin: top;
-  transition: transform 1s;
-}
+
 .logomenuburger {
   display: block;
   position: absolute;
@@ -871,7 +896,13 @@ h1 {
 {
   width: 50px;
 }
-
+  .card{
+    width: 100%;
+    height: fit-content;
+  }
+  .job{
+    text-align: center;
+  }
 .formation{
  font-size: 15px;
 }
