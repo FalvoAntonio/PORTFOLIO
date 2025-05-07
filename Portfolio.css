@@ -778,20 +778,28 @@ object-position: 0 -5px;
   margin-top: 1em;
   
 }
+.icones a
+{
+  text-decoration: none;
+  
+}
 .button
 {
   display: flex;
   justify-content: center;
   margin-bottom: 1em;
   
+  
 }
 
 button
 {
   border: solid 2px ;
-  font-size: 0.7em;
+  font-size: 0.7em;;
   font-weight: bold;
   cursor: pointer;
+  border-radius: 20px;
+  text-align: center;
   background-color: rgb(255, 255, 255);
   color: #9b4dff;
   box-shadow: #9b4dff 0px 0px 10px;
@@ -807,7 +815,6 @@ button:hover
   background-color: #9b4dff;
   color: white;
 }
-
 
 
 @media screen and (max-width: 1000px) 
