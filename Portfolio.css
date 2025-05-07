@@ -390,6 +390,7 @@ h2:not(.card h2) {
 .Skills {
   display: flex;
   justify-content: space-evenly;
+  
 }
 
 .imgHTML {
@@ -400,6 +401,9 @@ h2:not(.card h2) {
   background-size: cover;
   
   width: 15%;
+  max-width: 100px;  
+  /* J'utilise max-width et max-height ce qui me permet de rétrécir mes logos, pour qu'il s'adapte aussi quand je retreci la page */
+  max-height: 100px;
   aspect-ratio: 1/1;
   border-radius: 10px;
   border: solid 2px rgba(163, 79, 241, 0.8);; 
@@ -424,6 +428,8 @@ h2:not(.card h2) {
   background-color: white;
   
   width: 15%;
+  max-width: 100px;
+  max-height: 100px;
   aspect-ratio: 1/1;
   border-radius: 10px;
   background-size: cover;
@@ -451,6 +457,8 @@ h2:not(.card h2) {
   /* background-size:cover; */
   /* ne se calle pas en entier dans ma div */
   width: 15%;
+  max-width: 100px;
+  max-height: 100px;
   aspect-ratio: 1/1;
   background-color: white;
   border-radius: 10px;
@@ -478,6 +486,8 @@ h2:not(.card h2) {
   /* ne se calle pas en entier dans ma div */
   /* height: 15%; */
   width: 15%;
+  max-width: 100px;
+  max-height: 100px;
   aspect-ratio: 1/1;
   background-color: white;
   border-radius: 10px;
@@ -512,6 +522,8 @@ h2:not(.card h2) {
   /* ne se calle pas en entier dans ma div */
   
   width: 15%;
+  max-width: 100px;
+  max-height: 100px;
   aspect-ratio: 1/1;
   background-color: white;
   border-radius: 10px;
@@ -780,7 +792,7 @@ object-position: 0 -5px;
 }
 .icones a
 {
-  text-decoration: none;
+  text-decoration: none !important;
   
 }
 .button
@@ -889,6 +901,7 @@ h1 {
 }
 .Skills{
   flex-wrap: wrap;
+  /* Le flex-wrap: wrap Permet à mes logos compétences d'aller à la ligne quand ils n'ont plus de place */
   gap: 50px;
 }
 .video-container{
@@ -916,3 +929,7 @@ h1 {
 }
 
 
+.card a
+{
+  text-decoration: none;
+}
