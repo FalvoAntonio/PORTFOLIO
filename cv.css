@@ -102,7 +102,18 @@ body {
         width: 80vw;
         height: auto;
     }
-    
+   footer, footer p, .header-container{
+
+    text-align: center;
+   }
+ 
+     .header-container p {
+        width: 100%;
+        white-space: nowrap; /* Permet au texte de passer à la ligne */
+        animation: animp 6s steps(30) forwards;
+        
+    }
+
   }
 
 
