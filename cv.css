@@ -87,3 +87,22 @@ body {
         width: 100%;
     }
   }
+
+
+
+  @media screen and (max-width: 1000px) {
+    .MonCV
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .imgCV
+    {
+        width: 80vw;
+        height: auto;
+    }
+    
+  }
+
+
