@@ -646,7 +646,7 @@ h2:not(.card h2) {
 
 .imgGIT {
   position: relative;
-  background: url(./Images/icons8-git-240.png) no-repeat;
+  background: url(/PORTFOLIO/Images/icons8-git-240.png) no-repeat;
   background-size: cover;
   background-position: center;
   /* background-size:cover; */
